@@ -5,7 +5,9 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState(false);
   return (
-    <AppContext.Provider value={{ darkTheme }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ darkTheme, setDarkTheme }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 

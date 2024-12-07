@@ -1,5 +1,11 @@
 const SearchForm = () => {
-  return <h1>SearchForm</h1>;
+  return (
+    <form>
+      <h1>Unplash Images</h1>
+      <input type="text" />
+      <button>Search</button>
+    </form>
+  );
 };
 
 export default SearchForm;
