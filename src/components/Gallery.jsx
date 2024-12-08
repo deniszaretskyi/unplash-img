@@ -1,19 +1,19 @@
 import { getPhotos } from "../QueryCustomHooks";
 import { useGlobalContext } from "../Context";
-
+import blackSpinner from "../assets/infinite-spinner-black.svg";
 const Gallery = () => {
   const { queryVal } = useGlobalContext();
   const { data, isLoading, isError } = getPhotos(queryVal);
+  const { darkTheme } = useGlobalContext();
   const photos = data?.data?.results;
-  console.log(photos);
 
-  if (isLoading) return <h1>Loading...</h1>;
-  if (isError) return <h1>Error...</h1>;
+  if (isLoading) return <img id="LoadingIcon" src={blackSpinner} />;
+  if (isError) return <h1 id="ErrorMessage">Error...</h1>;
 
   return (
     <div className="gallery">
       {photos.map((item) => {
-        return <img key={item.id} src={item.urls.small}></img>;
+        return <img key={item.id} src={item.urls.regular}></img>;
       })}
     </div>
   );
