@@ -1,7 +1,9 @@
 import { getPhotos } from "../QueryCustomHooks";
+import { useGlobalContext } from "../Context";
 
 const Gallery = () => {
-  const { data, isLoading, isError } = getPhotos();
+  const { queryVal } = useGlobalContext();
+  const { data, isLoading, isError } = getPhotos(queryVal);
   const photos = data?.data?.results;
   console.log(photos);
 
