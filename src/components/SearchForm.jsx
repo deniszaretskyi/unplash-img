@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { useGlobalContext } from "../Context";
 import { BsSearchHeart } from "react-icons/bs";
 const SearchForm = () => {
@@ -8,7 +9,19 @@ const SearchForm = () => {
       className="searchForm"
       onSubmit={(e) => {
         e.preventDefault();
+        if (!inputVal) {
+          return toast.error("Provide name", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+          });
+        }
         setQueryVal(inputVal);
+        setInputVal("");
       }}
     >
       <h1 className="pageTitle">Unplash Images</h1>

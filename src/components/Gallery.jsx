@@ -25,6 +25,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-//TODO:
-//add param to getPhotos for query from input
-// add theme change funtionality
