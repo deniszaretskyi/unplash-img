@@ -4,15 +4,13 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState(false);
-  const [inputVal, setInputVal] = useState("");
+
   const [queryVal, setQueryVal] = useState("cat");
   return (
     <AppContext.Provider
       value={{
         darkTheme,
         setDarkTheme,
-        setInputVal,
-        inputVal,
         queryVal,
         setQueryVal,
       }}

@@ -70,6 +70,9 @@ li {
   max-height: 3rem;
   border: 1px solid;
 }
+.inputContainer input:focus {
+  outline: none;
+}
 .inputContainer input {
   padding: 0.5rem 1rem;
   border-top-left-radius: 30px;
@@ -111,8 +114,8 @@ li {
 }
 
 .darkMode {
-  background-color: var(--dark-mode-bg-color);
-  color: var(--dark-mode-text-color);
+  background-color: var(--dark-mode-bg-color) !important;
+  color: var(--dark-mode-text-color) !important;
 }
 
 /* =========================Gallery======================= */
@@ -142,6 +145,7 @@ li {
   left: 50%;
   transform: translate(-50%, 50%);
 }
+
 /* ==================================MEDIA==================== */
 @media (min-width: 768px) {
   .gallery {
@@ -169,7 +173,9 @@ li {
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --textColor: var(--dark-mode-text-color);
-    --backgroundColor: var(--dark-mode-bg-color);
+    --dark-mode-bg-color: #fff;
+    --dark-mode-text-color: #000;
+    --backgroundColor: #333;
+    --textColor: #f0f0f0;
   }
 }

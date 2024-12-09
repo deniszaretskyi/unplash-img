@@ -2,14 +2,15 @@ import { toast } from "react-toastify";
 import { useGlobalContext } from "../Context";
 import { BsSearchHeart } from "react-icons/bs";
 const SearchForm = () => {
-  const { setInputVal, inputVal, setQueryVal, darkTheme } = useGlobalContext();
+  const { setQueryVal, darkTheme } = useGlobalContext();
 
   return (
     <form
       className="searchForm"
       onSubmit={(e) => {
         e.preventDefault();
-        if (!inputVal) {
+        let searchValue = e.target.elements.search.value;
+        if (!searchValue) {
           return toast.error("Provide name", {
             position: "top-right",
             autoClose: 1000,
@@ -20,19 +21,14 @@ const SearchForm = () => {
             progress: undefined,
           });
         }
-        setQueryVal(inputVal);
-        setInputVal("");
+        setQueryVal(searchValue);
+
+        e.target.elements.search.value = "";
       }}
     >
       <h1 className="pageTitle">Unplash Images</h1>
       <div className="inputContainer">
-        <input
-          type="text"
-          value={inputVal}
-          onChange={(e) => {
-            setInputVal(e.target.value);
-          }}
-        />
+        <input name="search" type="text" />
         <button className="submitBtn" type="submit">
           <BsSearchHeart className="searchBtnIcon" />
         </button>

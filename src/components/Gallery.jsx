@@ -4,9 +4,11 @@ import blackSpinner from "../assets/infinite-spinner-black.svg";
 import whiteSpinner from "../assets/infinite-spinner-white.svg";
 const Gallery = () => {
   const { queryVal } = useGlobalContext();
-  const { data, isLoading, isError, error } = getPhotos(queryVal);
+  const { data, isLoading, isError } = getPhotos(queryVal);
   const { darkTheme } = useGlobalContext();
   const photos = data?.data?.results;
+  console.log(photos);
+
   const getSpinner = !darkTheme ? (
     <img id="LoadingIcon" src={blackSpinner} />
   ) : (
