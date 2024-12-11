@@ -3,6 +3,7 @@ import { useGlobalContext } from "../Context";
 import { BsSearchHeart } from "react-icons/bs";
 const SearchForm = () => {
   const { setQueryVal } = useGlobalContext();
+  const iconFallback = <span style={{ color: "red" }}>🔍</span>;
 
   return (
     <form
@@ -30,7 +31,7 @@ const SearchForm = () => {
       <div className="inputContainer">
         <input name="search" type="text" />
         <button className="submitBtn" type="submit">
-          <BsSearchHeart className="searchBtnIcon" />
+          {BsSearchHeart ? <BsSearchHeart /> : iconFallback}
         </button>
       </div>
     </form>
