@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export const getPhotos = (value) => {
   const { data, isLoading, isError } = useQuery({
-    queryKey: [value],
+    queryKey: ["images", value],
     queryFn: async () =>
       await customFetch.get("/", { params: { query: value } }),
   });

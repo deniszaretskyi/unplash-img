@@ -2,8 +2,15 @@ import { useContext, createContext, useState } from "react";
 
 export const AppContext = createContext();
 
+const getInitialDarkMode = () => {
+  const prefersDarkMode = window.matchMedia(
+    "(prefers-color-scheme:dark)"
+  ).matches;
+  return prefersDarkMode;
+};
+
 export const AppProvider = ({ children }) => {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(getInitialDarkMode());
 
   const [queryVal, setQueryVal] = useState("cat");
   return (

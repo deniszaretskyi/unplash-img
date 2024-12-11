@@ -8,7 +8,7 @@ const ThemeToggle = () => {
 
   return (
     <button className="toggleBtn" onClick={() => setDarkTheme(!darkTheme)}>
-      {!darkTheme ? <MdDarkMode /> : <MdLightMode />}
+      {!darkTheme ? <MdDarkMode /> : <MdLightMode color="#fff" />}
     </button>
   );
 };

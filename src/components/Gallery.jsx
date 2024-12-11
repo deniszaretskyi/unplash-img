@@ -7,7 +7,6 @@ const Gallery = () => {
   const { data, isLoading, isError } = getPhotos(queryVal);
   const { darkTheme } = useGlobalContext();
   const photos = data?.data?.results;
-  console.log(photos);
 
   const getSpinner = !darkTheme ? (
     <img id="LoadingIcon" src={blackSpinner} />

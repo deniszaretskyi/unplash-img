@@ -171,11 +171,3 @@ li {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --dark-mode-bg-color: #fff;
-    --dark-mode-text-color: #000;
-    --backgroundColor: #333;
-    --textColor: #f0f0f0;
-  }
-}
