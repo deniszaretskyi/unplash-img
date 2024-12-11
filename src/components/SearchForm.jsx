@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import { useGlobalContext } from "../Context";
 import { BsSearchHeart } from "react-icons/bs";
 const SearchForm = () => {
-  const { setQueryVal, darkTheme } = useGlobalContext();
+  const { setQueryVal } = useGlobalContext();
 
   return (
     <form
